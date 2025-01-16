@@ -54,6 +54,9 @@ for fichier in os.listdir(dossier_txt):
         # Filtrage des colonnes nécessaires
         df_filtre = df[colonnes_existantes]
         
+        # Suppression des lignes où "Surface reelle bati" est vide
+        df_filtre = df_filtre.dropna(subset=["Surface reelle bati"])
+        
         # Filtrage par les départements de la région Occitanie
         df_occitanie = df_filtre[df_filtre["Code departement"].astype(str).isin(codes_departements_occitanie)]
         
