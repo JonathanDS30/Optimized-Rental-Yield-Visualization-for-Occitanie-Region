@@ -1,7 +1,8 @@
 import os
 import subprocess
 import sys
-
+# Les fichiers .txt utilisées pour générer le fichier_fusionne_occitanie.zip viennent du lien suivant : 
+# https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/ et il regroupe les données depuis début 2020 jusqu'à mi-2024 mais il est tout à fait possible d'étendre la couverture temporelle et géographique 
 # Vérification et installation de pandas si nécessaire
 try:
     import pandas as pd
