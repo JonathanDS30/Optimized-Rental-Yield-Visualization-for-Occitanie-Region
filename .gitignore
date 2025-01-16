@@ -1,0 +1,20 @@
+# Ignorer les fichiers temporaires générés par JasperSoft Studio
+*.bak
+*.class
+*.log
+*.tmp
+*.~*
+
+# Ignorer les fichiers de configuration locaux
+.project
+.settings/
+.metadata/
+.classpath
+
+# Ignorer les dossiers de sortie (exemple pour JasperSoft Studio)
+bin/
+build/
+
+# Ignorer les fichiers spécifiques au système d'exploitation
+.DS_Store
+Thumbs.db
