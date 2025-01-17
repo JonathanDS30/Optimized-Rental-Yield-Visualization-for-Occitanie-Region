@@ -59,6 +59,9 @@ for fichier in os.listdir(dossier_txt):
         
         # Filtrage par les départements de la région Occitanie
         df_occitanie = df_filtre[df_filtre["Code departement"].astype(str).isin(codes_departements_occitanie)]
+
+        # Supprimer les décimales dans "Code departement"
+        df_filtre["Code departement"] = df_filtre["Code departement"].astype(str).str.split(".").str[0].astype(int)
         
         # Ajouter au tableau des DataFrames filtrés
         fichiers_dataframes.append(df_occitanie)
