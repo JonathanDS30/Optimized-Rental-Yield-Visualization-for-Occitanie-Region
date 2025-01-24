@@ -2,10 +2,6 @@ import os
 import subprocess
 import sys
 
-# The .txt files used to generate the merged_occitanie.zip come from the following link:
-# https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/
-# It includes data from early 2022 to mid-2024, but it is possible to extend the temporal and geographical coverage.
-
 # Check and install pandas if necessary
 try:
     import pandas as pd
@@ -14,80 +10,133 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas"])
     import pandas as pd
 
-# Folder containing the TXT files
-txt_folder = "C:/Users/leon/OneDrive/Documents/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/data/raw"
-# Output file for merged data
-output_file = "C:/Users/leon/OneDrive/Documents/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/data/processed/merged_occitanie.csv"
+# Define the base directory (relative to the script location)
+base_dir = os.path.dirname(__file__)
 
-# List of columns to keep
-useful_columns = [
-    "Date mutation",
-    "Nature mutation",
-    "Valeur fonciere",
-    "Code postal",
-    "Commune",
-    "Section",
-    "Code departement",
-    "Code commune",
-    "No plan",
-    "Type local",  # Already included in the list
-    "Surface reelle bati",
-    "Nombre pieces principales",
-    "Surface terrain"
+# Define input and output folders (relative paths)
+input_folder = os.path.join(base_dir,"..", "data", "raw")
+output_folder = os.path.join(base_dir,"..", "data", "processed")
+
+# Ensure output folder exists
+os.makedirs(output_folder, exist_ok=True)
+
+# Output files (in the 'processed' folder)
+output_file_sales = os.path.join(output_folder, "cleaned_sales_data.csv")
+output_file_rentals = os.path.join(output_folder, "cleaned_rentals_data.csv")
+
+# List of columns to keep for TXT files
+useful_columns_txt = [
+    "Date mutation", "Nature mutation", "Valeur fonciere", "Code postal",
+    "Commune", "Section", "Code departement", "Code commune", "No plan",
+    "Type local", "Surface reelle bati", "Nombre pieces principales", "Surface terrain"
 ]
 
 # List of department codes for the Occitanie region
 occitanie_department_codes = ["09", "11", "12", "30", "31", "32", "34", "46", "48", "65", "66", "81", "82"]
 
-# List to store filtered DataFrames
-filtered_dataframes = []
+# List of columns to keep for CSV files
+useful_columns_csv = [
+    "Data_year", "agglomeration", "Type_habitat", "nombre_pieces_homogene",
+    "loyer_mensuel_1_decile", "loyer_mensuel_1_quartile", "loyer_mensuel_median",
+    "loyer_mensuel_3_quartile", "loyer_mensuel_9_decile", "moyenne_loyer_mensuel",
+    "surface_moyenne", "nombre_logements"
+]
 
-# Iterate through TXT files in the folder
-for file in os.listdir(txt_folder):
-    if file.endswith(".txt"):
-        file_path = os.path.join(txt_folder, file)
-        print(f"Processing file: {file_path}")
-        
-        # Read the TXT file
-        df = pd.read_csv(file_path, delimiter="|", low_memory=False)  # Check the delimiter if necessary
-        
-        # Check if the necessary columns are present
-        existing_columns = [col for col in useful_columns if col in df.columns]
-        
-        # Filter the necessary columns
-        filtered_df = df[existing_columns]
-        
-        # Remove rows where "Surface reelle bati" is empty
-        filtered_df = filtered_df.dropna(subset=["Surface reelle bati"])
-        
-        # Filter by departments in the Occitanie region
-        occitanie_df = filtered_df[filtered_df["Code departement"].astype(str).isin(occitanie_department_codes)]
+# Target agglomerations for CSV files
+target_agglomerations = [
+    "Agglomération d'Arles", "Agglomération de Montpellier", "Agglomération de Nîmes",
+    "Agglomération de Sète", "Agglomération de Toulouse"
+]
 
-        # Remove rows where "Type local" is "Dépendance"
-        occitanie_df = occitanie_df[occitanie_df["Type local"] != "Dépendance"]
+def process_txt_files(input_folder, output_file, useful_columns, department_codes):
+    """
+    Processes all TXT files in a folder, applies cleaning and filtering,
+    and saves the merged result to a CSV file.
+    """
+    filtered_dataframes = []
 
-        # Remove rows where "Type local" is "Dépendance"
-        occitanie_df = occitanie_df[occitanie_df["Type local"] != "Local industriel. commercial ou assimilé"]
+    for file in os.listdir(input_folder):
+        if file.endswith(".txt"):
+            file_path = os.path.join(input_folder, file)
+            print(f"Processing TXT file: {file_path}")
+            
+            df = pd.read_csv(file_path, delimiter="|", low_memory=False)
+            existing_columns = [col for col in useful_columns if col in df.columns]
+            filtered_df = df[existing_columns]
 
-        # Convert "Code postal" to integer (handle missing values)
-        occitanie_df["Code postal"] = pd.to_numeric(occitanie_df["Code postal"], errors="coerce").fillna(0).astype(int)
+            # Remove rows with missing "Surface reelle bati"
+            filtered_df = filtered_df.dropna(subset=["Surface reelle bati"])
 
-        # Convert "Surface reelle bati" to integer (handle missing values)
-        occitanie_df["Surface reelle bati"] = pd.to_numeric(occitanie_df["Surface reelle bati"], errors="coerce").fillna(0).astype(int)
+            # Filter by departments in the Occitanie region
+            filtered_df = filtered_df[filtered_df["Code departement"].astype(str).isin(department_codes)]
 
-        # Convert "Nombre pieces principales" to integer (handle missing values)
-        occitanie_df["Nombre pieces principales"] = pd.to_numeric(occitanie_df["Nombre pieces principales"], errors="coerce").fillna(0).astype(int)
+            # Remove rows with unwanted "Type local" values
+            filtered_df = filtered_df[~filtered_df["Type local"].isin(["Dépendance", "Local industriel. commercial ou assimilé"])]
 
-        # Convert "Surface terrain" to integer (handle missing values)
-        occitanie_df["Surface terrain"] = pd.to_numeric(occitanie_df["Surface terrain"], errors="coerce").fillna(0).astype(int)
-        
-        # Add to the list of filtered DataFrames
-        filtered_dataframes.append(occitanie_df)
+            # Convert numeric columns
+            numeric_columns = ["Code postal", "Surface reelle bati", "Nombre pieces principales", "Surface terrain"]
+            for col in numeric_columns:
+                filtered_df[col] = pd.to_numeric(filtered_df[col], errors="coerce").fillna(0).astype(int)
 
-# Merge all DataFrames into one
-merged_df = pd.concat(filtered_dataframes, ignore_index=True)
+            filtered_dataframes.append(filtered_df)
 
-# Save the result to a CSV file
-merged_df.to_csv(output_file, index=False, sep=";")
+    # Merge all DataFrames and save to CSV
+    merged_df = pd.concat(filtered_dataframes, ignore_index=True)
+    merged_df.to_csv(output_file, index=False, sep=";")
+    print(f"Cleaned TXT data saved to: {output_file}")
 
-print(f"Merged and filtered file created successfully: {output_file}")
+def clean_rental_data(df, useful_columns, target_agglomerations):
+    """
+    Cleans a DataFrame containing rental data.
+    - Keeps only useful columns.
+    - Removes rows with empty values in key columns.
+    - Extracts the first number from "nombre_pieces_homogene".
+    - Filters rows based on specific agglomerations.
+    - Converts all numeric columns to integers.
+    """
+    df = df[useful_columns]
+    df = df.dropna(subset=useful_columns)
+
+    # Extract the first number from "nombre_pieces_homogene"
+    df["nombre_pieces_homogene"] = df["nombre_pieces_homogene"].str.extract(r"(\d+)").astype(float).fillna(0).astype(int)
+
+    # Filter rows based on specific agglomerations
+    df = df[df["agglomeration"].isin(target_agglomerations)]
+
+    # Convert numeric columns to integers
+    numeric_columns = [
+        "Data_year", "nombre_pieces_homogene", "loyer_mensuel_1_decile", "loyer_mensuel_1_quartile",
+        "loyer_mensuel_median", "loyer_mensuel_3_quartile", "loyer_mensuel_9_decile",
+        "moyenne_loyer_mensuel", "surface_moyenne", "nombre_logements"
+    ]
+    for col in numeric_columns:
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0).astype(int)
+
+    return df
+
+def process_csv_files(input_folder, output_file, useful_columns, target_agglomerations):
+    """
+    Processes all CSV files in a folder, applies the cleaning function,
+    and saves the results to a single CSV file.
+    """
+    cleaned_dataframes = []
+
+    for file in os.listdir(input_folder):
+        if file.endswith(".csv"):
+            file_path = os.path.join(input_folder, file)
+            print(f"Processing CSV file: {file_path}")
+            
+            df = pd.read_csv(file_path, delimiter=";", encoding="ISO-8859-1")
+            cleaned_df = clean_rental_data(df, useful_columns, target_agglomerations)
+            cleaned_dataframes.append(cleaned_df)
+
+    # Merge all cleaned DataFrames and save to CSV
+    merged_df = pd.concat(cleaned_dataframes, ignore_index=True)
+    merged_df.to_csv(output_file, index=False, sep=";")
+    print(f"Cleaned CSV data saved to: {output_file}")
+
+# Process TXT files
+process_txt_files(input_folder, output_file_sales, useful_columns_txt, occitanie_department_codes)
+
+# Process CSV files
+process_csv_files(input_folder, output_file_rentals, useful_columns_csv, target_agglomerations)
