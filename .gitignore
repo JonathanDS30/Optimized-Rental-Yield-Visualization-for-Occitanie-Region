@@ -12,8 +12,8 @@
 .classpath
 
 # Ignorer les fichiers de données brutes
-.csv
-.txt
+*.csv
+*.txt
 
 # Ignorer les dossiers de sortie (exemple pour JasperSoft Studio)
 bin/
