@@ -11,6 +11,10 @@
 .metadata/
 .classpath
 
+# Ignorer les fichiers de données brutes
+.csv
+.txt
+
 # Ignorer les dossiers de sortie (exemple pour JasperSoft Studio)
 bin/
 build/
