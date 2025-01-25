@@ -45,7 +45,7 @@ useful_columns_csv = [
 # Target agglomerations for CSV files
 target_agglomerations = [
     "Agglomération d'Arles", "Agglomération de Montpellier", "Agglomération de Nîmes",
-    "Agglomération de Sète", "Agglomération de Toulouse"
+    "Agglomération de Sète", "Agglomération de Toulouse", "Agglomération d'Alès"
 ]
 
 def process_txt_files(input_folder, output_file, useful_columns, department_codes):
@@ -73,11 +73,16 @@ def process_txt_files(input_folder, output_file, useful_columns, department_code
             # Remove rows with unwanted "Type local" values
             filtered_df = filtered_df[~filtered_df["Type local"].isin(["Dépendance", "Local industriel. commercial ou assimilé"])]
 
+            
+
             # Convert numeric columns
             numeric_columns = ["Code postal", "Surface reelle bati", "Nombre pieces principales", "Surface terrain"]
             for col in numeric_columns:
                 filtered_df[col] = pd.to_numeric(filtered_df[col], errors="coerce").fillna(0).astype(int)
 
+            # Remove rows with unwanted "Code postal" values (e.g., 0)
+            filtered_df = filtered_df[filtered_df["Code postal"] != 0]
+            
             filtered_dataframes.append(filtered_df)
 
     # Merge all DataFrames and save to CSV
