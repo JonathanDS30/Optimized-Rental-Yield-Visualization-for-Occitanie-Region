@@ -18,3 +18,5 @@ build/
 # Ignorer les fichiers spécifiques au système d'exploitation
 .DS_Store
 Thumbs.db
+
+docs/database/mysql_data

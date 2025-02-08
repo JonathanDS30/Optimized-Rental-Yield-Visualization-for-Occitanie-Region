@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: "occitanie-yield"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: occitanie_yield_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3306:3306" # MySQL accessible sur le port 3306
+    volumes:
+      - ./docs/database/mysql_data:/var/lib/mysql # Persistance des données MySQL
+      - ./docs/database/sql-scripts/dump.sql:/docker-entrypoint-initdb.d/dump.sql # Initialisation avec des scripts SQL au démarrage
+
+volumes:
+  mysql_data:
