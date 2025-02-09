@@ -147,80 +147,80 @@ FROM occitanie_yield_db.communes_data]]></query>
 					<datasetRun uuid="98cd4a34-30a9-47bf-841a-9ef05d0328e7" subDataset="Tableau récapitulatif des rendements locatifs par ville">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<column kind="single" uuid="bc86e4b5-df7e-4364-a857-23a67348a21e" width="33">
+					<column kind="single" uuid="bc86e4b5-df7e-4364-a857-23a67348a21e" width="93">
 						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="6c22d6e5-a7b6-4218-90b4-1cbed68b670c" x="0" y="0" width="33" height="30">
+							<element kind="staticText" uuid="6c22d6e5-a7b6-4218-90b4-1cbed68b670c" x="0" y="0" width="93" height="30">
 								<text><![CDATA[NOM_COM_M]]></text>
 							</element>
 						</columnHeader>
 						<columnFooter height="30" style="Table_CH"/>
 						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="5c99015b-47e6-42c2-9a5b-fe028fbad7e1" x="0" y="0" width="33" height="30">
+							<element kind="textField" uuid="5c99015b-47e6-42c2-9a5b-fe028fbad7e1" x="0" y="0" width="93" height="30">
 								<expression><![CDATA[$F{NOM_COM_M}]]></expression>
 							</element>
 						</detailCell>
 					</column>
-					<column kind="single" uuid="aa5d69e6-f9af-46e1-b4cb-5d77da7fe7f4" width="33">
+					<column kind="single" uuid="aa5d69e6-f9af-46e1-b4cb-5d77da7fe7f4" width="94">
 						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="e8d30c57-1a34-47a7-b971-4fc92e5d5c1e" x="0" y="0" width="33" height="30">
+							<element kind="staticText" uuid="e8d30c57-1a34-47a7-b971-4fc92e5d5c1e" x="0" y="0" width="94" height="30">
 								<text><![CDATA[INSEE_DEP]]></text>
 							</element>
 						</columnHeader>
 						<columnFooter height="30" style="Table_CH"/>
 						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="d959e8dd-0fa3-4efc-90fa-44729541649e" x="0" y="0" width="33" height="30">
+							<element kind="textField" uuid="d959e8dd-0fa3-4efc-90fa-44729541649e" x="0" y="0" width="94" height="30">
 								<expression><![CDATA[$F{INSEE_DEP}]]></expression>
 							</element>
 						</detailCell>
 					</column>
-					<column kind="single" uuid="b2c73e97-5ad4-49cc-97a1-1f5cbb780b3e" width="33">
+					<column kind="single" uuid="b2c73e97-5ad4-49cc-97a1-1f5cbb780b3e" width="94">
 						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="4f1bf039-2728-45bc-9c5b-88880c0c8770" x="0" y="0" width="33" height="30">
+							<element kind="staticText" uuid="4f1bf039-2728-45bc-9c5b-88880c0c8770" x="0" y="0" width="94" height="30">
 								<text><![CDATA[POPULATION]]></text>
 							</element>
 						</columnHeader>
 						<columnFooter height="30" style="Table_CH"/>
 						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="61f38c3f-1958-483c-96bc-3df7fa7fa091" x="0" y="0" width="33" height="30">
+							<element kind="textField" uuid="61f38c3f-1958-483c-96bc-3df7fa7fa091" x="0" y="0" width="94" height="30">
 								<expression><![CDATA[$F{POPULATION}]]></expression>
 							</element>
 						</detailCell>
 					</column>
-					<column kind="single" uuid="1de700c9-923f-44cd-ad05-3f05028d56b9" width="33">
+					<column kind="single" uuid="1de700c9-923f-44cd-ad05-3f05028d56b9" width="93">
 						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="9ee717e0-d28d-4c52-8804-5ce51fb00bdc" x="0" y="0" width="33" height="30">
+							<element kind="staticText" uuid="9ee717e0-d28d-4c52-8804-5ce51fb00bdc" x="0" y="0" width="93" height="30">
 								<text><![CDATA[PrixMoyen_M2_2223]]></text>
 							</element>
 						</columnHeader>
 						<columnFooter height="30" style="Table_CH"/>
 						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="40f17956-6d8c-4787-b99c-833c674ff944" x="0" y="0" width="33" height="30">
+							<element kind="textField" uuid="40f17956-6d8c-4787-b99c-833c674ff944" x="0" y="0" width="93" height="30">
 								<expression><![CDATA[$F{PrixMoyen_M2_2223}]]></expression>
 							</element>
 						</detailCell>
 					</column>
-					<column kind="single" uuid="d42e6e85-6de5-4ba5-b7e7-3709b1ae1908" width="33">
+					<column kind="single" uuid="d42e6e85-6de5-4ba5-b7e7-3709b1ae1908" width="93">
 						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="da98cec7-8dfa-4654-ad58-8738e3656abe" x="0" y="0" width="33" height="30">
+							<element kind="staticText" uuid="da98cec7-8dfa-4654-ad58-8738e3656abe" x="0" y="0" width="93" height="30">
 								<text><![CDATA[Rendement_locatif_apparts]]></text>
 							</element>
 						</columnHeader>
 						<columnFooter height="30" style="Table_CH"/>
 						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="1e920917-b2dc-4300-9010-caa6f6270f28" x="0" y="0" width="33" height="30">
+							<element kind="textField" uuid="1e920917-b2dc-4300-9010-caa6f6270f28" x="0" y="0" width="93" height="30">
 								<expression><![CDATA[$F{Rendement_locatif_apparts}]]></expression>
 							</element>
 						</detailCell>
 					</column>
-					<column kind="single" uuid="0b1d5136-54a8-4562-9c09-b189c5795627" width="33">
+					<column kind="single" uuid="0b1d5136-54a8-4562-9c09-b189c5795627" width="93">
 						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="13527284-add9-45a6-bc2d-4018f0870c5b" x="0" y="0" width="33" height="30">
+							<element kind="staticText" uuid="13527284-add9-45a6-bc2d-4018f0870c5b" x="0" y="0" width="93" height="30">
 								<text><![CDATA[Rendement_locatif_maisons]]></text>
 							</element>
 						</columnHeader>
 						<columnFooter height="30" style="Table_CH"/>
 						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="0e743f56-9c6d-4d75-a0c7-6335bd949c66" x="0" y="0" width="33" height="30">
+							<element kind="textField" uuid="0e743f56-9c6d-4d75-a0c7-6335bd949c66" x="0" y="0" width="93" height="30">
 								<expression><![CDATA[$F{Rendement_locatif_maisons}]]></expression>
 							</element>
 						</detailCell>
