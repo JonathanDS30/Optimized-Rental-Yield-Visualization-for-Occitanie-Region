@@ -20,3 +20,4 @@ build/
 Thumbs.db
 
 docs/database/mysql_data
+jasper_project/drivers/mysql-connector-j-9.2.0/
