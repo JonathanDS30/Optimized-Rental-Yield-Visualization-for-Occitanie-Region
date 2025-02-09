@@ -1,0 +1,159 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Types_Bien" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc0b2249-64ea-450b-8770-1f04cff8c79c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="b2NjaXRhbmllX3lpZWxkX2RiLmNvbW11bmVzX2RhdGEgQVMgLDk3LDc0LDlhMWYwZjBjLTY3ZDQt&#xa;NDVlMC05NzA3LTE0ZTdkZjk0ZWI4Zjs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+	<dataset name="PieChart_Biens" uuid="13c2859a-c904-4b7d-81de-9164916da944">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+		<query language="SQL"><![CDATA[SELECT
+    INSEE_DEP,
+    SUM(loyer_apparts) AS total_loyer_apparts,
+    SUM(loyer_maisons) AS total_loyer_maisons,
+    (SUM(loyer_apparts) / (SELECT SUM(loyer_apparts) FROM communes_data)) * 100 AS percent_apparts,
+    (SUM(loyer_maisons) / (SELECT SUM(loyer_maisons) FROM communes_data)) * 100 AS percent_maisons
+FROM
+    communes_data
+GROUP BY
+    INSEE_DEP
+]]></query>
+		<field name="INSEE_DEP" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+			<property name="com.jaspersoft.studio.field.label" value="INSEE_DEP"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="total_loyer_apparts" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="total_loyer_apparts"/>
+			<property name="com.jaspersoft.studio.field.label" value="total_loyer_apparts"/>
+		</field>
+		<field name="total_loyer_maisons" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="total_loyer_maisons"/>
+			<property name="com.jaspersoft.studio.field.label" value="total_loyer_maisons"/>
+		</field>
+		<field name="percent_apparts" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="percent_apparts"/>
+			<property name="com.jaspersoft.studio.field.label" value="percent_apparts"/>
+		</field>
+		<field name="percent_maisons" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="percent_maisons"/>
+			<property name="com.jaspersoft.studio.field.label" value="percent_maisons"/>
+		</field>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT `INSEE_COM`,
+	`INSEE_DEP`,
+	`NOM_COM_M`,
+	`POPULATION`,
+	`PrixMoyen_M2_2223`,
+	`Prixm2Moyen_2022`,
+	`Prixm2Moyen_2023`,
+	loyer_apparts,
+	loyer_maisons,
+	`Rendement_locatif_apparts`
+FROM occitanie_yield_db.communes_data]]></query>
+	<field name="INSEE_COM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="INSEE_DEP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="NOM_COM_M" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="POPULATION" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.label" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="PrixMoyen_M2_2223" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2022" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2023" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="140" splitType="Stretch">
+		<element kind="rectangle" uuid="ac6d8e5d-12cc-4630-bcb1-490dd1c82301" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
+			<pen lineColor="#C90000"/>
+		</element>
+		<element kind="staticText" uuid="a65f9c17-a419-44aa-8d89-a9cb5906919d" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
+		</element>
+		<element kind="image" uuid="30423c0a-2dc2-4a91-90b4-e37d8bfe4230" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
+			<expression><![CDATA["D:/Thomas/Documents/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+		</element>
+	</title>
+	<summary height="607" splitType="Stretch">
+		<element kind="chart" chartType="pie3D" uuid="dd48f330-b854-44c5-9314-787b202ae028" x="2" y="10" width="550" height="250" evaluationTime="Report" linkType="None" linkTarget="Self" theme="default">
+			<titleFont fontName="Arial" fontSize="14.0" bold="true"/>
+			<titleExpression><![CDATA["Appartement en location par département"]]></titleExpression>
+			<dataset kind="pie">
+				<datasetRun uuid="b9cef6b1-c406-4096-b6bb-928769e4a82f" subDataset="PieChart_Biens">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<keyExpression><![CDATA[$F{INSEE_DEP}]]></keyExpression>
+					<valueExpression><![CDATA[$F{total_loyer_apparts}]]></valueExpression>
+					<labelExpression><![CDATA[new java.text.DecimalFormat("#.0").format($F{percent_apparts}) + " %"
+
+]]></labelExpression>
+				</series>
+			</dataset>
+			<plot>
+				<itemLabel/>
+			</plot>
+		</element>
+		<element kind="chart" chartType="pie3D" uuid="c72dafe0-a833-4954-9d3a-a8fcefaee0c9" x="2" y="270" width="550" height="250" evaluationTime="Report" theme="default.spring">
+			<titleFont fontName="Arial" fontSize="14.0" bold="true"/>
+			<titleExpression><![CDATA["Maison en location par département"]]></titleExpression>
+			<dataset kind="pie">
+				<datasetRun uuid="13d49a97-1f23-4eba-af8f-9543ecb29a2e" subDataset="PieChart_Biens">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<keyExpression><![CDATA[$F{INSEE_DEP}]]></keyExpression>
+					<valueExpression><![CDATA[$F{total_loyer_maisons}]]></valueExpression>
+					<labelExpression><![CDATA[new java.text.DecimalFormat("#.0").format($F{percent_maisons}) + " %"
+]]></labelExpression>
+				</series>
+			</dataset>
+			<plot>
+				<itemLabel/>
+			</plot>
+		</element>
+		<element kind="textField" uuid="07378ddd-1568-409a-9edf-cc0d7dddd624" x="2" y="520" width="550" height="41" fontName="Arial" fontSize="12.0">
+			<expression><![CDATA["On peut voir que le Gard, la Haute-Garonne et l'Hérault sont les départements avec le plus d'appartements et de maisons en location"]]></expression>
+		</element>
+		<element kind="staticText" uuid="2f88da66-be9c-4bc6-94b8-500fc7ea024d" x="2" y="560" width="542" height="30">
+			<text><![CDATA[09 - Ariège | 11 - Aude | 12 - Aveyron | 30 - Gard | 31 - Haute-Garonne | 32 - Gers | 34 - Hérault | 46 - Lot | 48 - Lozère | 65 -  Hautes-Pyrénées | 66 - Pyrénées-Orientales | 81 - Tarn | 82 - Tarn-et-Garonne]]></text>
+		</element>
+	</summary>
+</jasperReport>
