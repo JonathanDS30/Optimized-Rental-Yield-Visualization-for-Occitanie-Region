@@ -1,0 +1,145 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="nuage de point rendement vs prix au metre carre" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79e5e9a5-9c1a-467f-8404-8d1791a00142">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="b2NjaXRhbmllX3lpZWxkX2RiLmNvbW11bmVzX2RhdGEgQVMgLDEwNCwxMDIsZjE1ZTVjMmQtZDlj&#xa;OS00Yjg0LTk4MzItODlkODk4YjM2ZTVmOw=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IMMO_BDD"/>
+	<dataset name="rendementvsloyermoyen" uuid="8abc46a1-e604-4900-9ee5-85e50a4829ea">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IMMO_BDD"/>
+		<query language="SQL"><![CDATA[SELECT 
+    PrixMoyen_M2_2223,
+    Rendement_locatif_apparts,
+    Rendement_locatif_maisons
+FROM 
+    communes_data
+WHERE 
+    PrixMoyen_M2_2223 > 0 
+    AND (Rendement_locatif_apparts > 0 OR Rendement_locatif_maisons > 0)]]></query>
+		<field name="PrixMoyen_M2_2223" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="PrixMoyen_M2_2223"/>
+			<property name="com.jaspersoft.studio.field.label" value="PrixMoyen_M2_2223"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="Rendement_locatif_apparts" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_apparts"/>
+			<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_apparts"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="Rendement_locatif_maisons" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_maisons"/>
+			<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_maisons"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT `INSEE_COM`,
+	`INSEE_DEP`,
+	`NOM_COM_M`,
+	`POPULATION`,
+	`PrixMoyen_M2_2223`,
+	`Prixm2Moyen_2022`,
+	loyer_apparts,
+	`Prixm2Moyen_2023`,
+	loyer_maisons,
+	`Rendement_locatif_apparts`,
+	`Rendement_locatif_maisons`
+FROM occitanie_yield_db.communes_data]]></query>
+	<field name="INSEE_COM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="INSEE_DEP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="NOM_COM_M" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="POPULATION" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.label" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="PrixMoyen_M2_2223" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2022" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2023" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="140" splitType="Stretch">
+		<element kind="rectangle" uuid="ec084a43-a2bf-4987-89ac-412b505a4fe7" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
+			<pen lineColor="#C90000"/>
+		</element>
+		<element kind="staticText" uuid="ad729d64-d4f0-43f2-a764-b32bf045aec3" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>
+		</element>
+		<element kind="image" uuid="2487aa97-eb86-404c-91b8-c8cc73289114" x="-20" y="0" width="180" height="140">
+			<expression><![CDATA["C:/Users/leon/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+		</element>
+	</title>
+	<summary height="450" splitType="Stretch">
+		<element kind="chart" chartType="scatter" uuid="b4704bd3-ba3b-441d-9053-31e990c85798" x="0" y="45" width="260" height="250" evaluationTime="Report">
+			<dataset kind="xy">
+				<datasetRun uuid="2f150b89-fc06-4b72-a52e-fadee002b38c" subDataset="rendementvsloyermoyen"/>
+				<series>
+					<seriesExpression><![CDATA["Rendement locatif des appartements"]]></seriesExpression>
+					<xvalueExpression><![CDATA[$F{PrixMoyen_M2_2223}]]></xvalueExpression>
+					<yvalueExpression><![CDATA[$F{Rendement_locatif_apparts}]]></yvalueExpression>
+				</series>
+			</dataset>
+			<plot xAxisLabelColor="#000000" xAxisTickLabelColor="#000000" yAxisTickLabelColor="#000000" yAxisLabelColor="#000000" yAxisLineColor="#000000" xAxisLineColor="#000000">
+				<yaxisLabelExpression><![CDATA["Rendement locatif"]]></yaxisLabelExpression>
+				<xaxisLabelExpression><![CDATA["prix moyen au mètre carré"]]></xaxisLabelExpression>
+			</plot>
+		</element>
+		<element kind="chart" chartType="scatter" uuid="c7a5f4f8-2e43-495f-9def-e3501d66ed56" x="290" y="44" width="260" height="250" evaluationTime="Report">
+			<dataset kind="xy">
+				<datasetRun uuid="276b4a25-d061-4411-b93c-c9ce6d6d69ec" subDataset="rendementvsloyermoyen"/>
+				<series>
+					<seriesExpression><![CDATA["Rendement locatif des maisons"]]></seriesExpression>
+					<xvalueExpression><![CDATA[$F{PrixMoyen_M2_2223}]]></xvalueExpression>
+					<yvalueExpression><![CDATA[$F{Rendement_locatif_maisons}]]></yvalueExpression>
+				</series>
+			</dataset>
+			<plot xAxisLabelColor="#000000" xAxisTickLabelColor="#000000" yAxisTickLabelColor="#000000" yAxisLabelColor="#000000" yAxisLineColor="#000000" xAxisLineColor="#000000">
+				<yaxisLabelExpression><![CDATA["Rendement locatif"]]></yaxisLabelExpression>
+				<xaxisLabelExpression><![CDATA["prix moyen au mètre carré"]]></xaxisLabelExpression>
+			</plot>
+		</element>
+		<element kind="staticText" uuid="2a16c797-2285-48e0-a3ea-f504c8c881a3" x="0" y="346" width="550" height="84">
+			<text><![CDATA[Ce double graphique illustre la relation entre le prix moyen au mètre carré et le rendement locatif pour les appartements et les maisons en région Occitanie. On observe une tendance générale : les rendements locatifs diminuent à mesure que le prix moyen au mètre carré augmente, ce qui suggère une corrélation inverse entre le coût d'acquisition et la rentabilité locative.]]></text>
+		</element>
+	</summary>
+</jasperReport>

@@ -1,0 +1,133 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="histo_prix_moy_mcarre" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="286295fc-ac79-418a-878e-7192dcf8a10b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IMMO_BDD"/>
+	<dataset name="DATASET_HISTO_PRIX_MCARRE" uuid="d18f49ed-bd6c-44bf-9b99-ea52bb060f40">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IMMO_BDD"/>
+		<query language="SQL"><![CDATA[SELECT 
+    CASE  
+        WHEN (PrixMoyen_M2_2223 < 1000) THEN '0-1000'
+        WHEN (PrixMoyen_M2_2223 < 2000) THEN '1000-2000'
+        WHEN (PrixMoyen_M2_2223 < 3000) THEN '2000-3000'
+        WHEN (PrixMoyen_M2_2223 < 4000) THEN '3000-4000'
+        WHEN (PrixMoyen_M2_2223 < 5000) THEN '4000-5000'
+        ELSE '5000+'
+    END AS Tranche_Prix,
+    COUNT(*) AS Nombre_Communes
+FROM communes_data
+GROUP BY Tranche_Prix
+ORDER BY Tranche_Prix]]></query>
+		<field name="Tranche_Prix" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Tranche_Prix"/>
+			<property name="com.jaspersoft.studio.field.label" value="Tranche_Prix"/>
+		</field>
+		<field name="Nombre_Communes" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="Nombre_Communes"/>
+			<property name="com.jaspersoft.studio.field.label" value="Nombre_Communes"/>
+		</field>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT `INSEE_COM`,
+	`INSEE_DEP`,
+	`NOM_COM_M`,
+	`POPULATION`,
+	`PrixMoyen_M2_2223`,
+	`Prixm2Moyen_2022`,
+	`Prixm2Moyen_2023`,
+	loyer_apparts,
+	loyer_maisons,
+	`Rendement_locatif_apparts`,
+	`Rendement_locatif_maisons`
+FROM occitanie_yield_db.communes_data]]></query>
+	<field name="INSEE_COM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="INSEE_DEP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="NOM_COM_M" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="POPULATION" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.label" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="PrixMoyen_M2_2223" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2022" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2023" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="140" splitType="Stretch">
+		<element kind="rectangle" uuid="1437b1c1-9729-41e1-bc18-3c8a122434bc" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
+			<pen lineColor="#C90000"/>
+		</element>
+		<element kind="image" uuid="a5cff9d7-b36b-4d2c-9aa2-d5db04d6a3e6" x="-20" y="0" width="180" height="140">
+			<expression><![CDATA["C:/Users/leon/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+		</element>
+		<element kind="staticText" uuid="c41c3d3e-dc50-438a-adb9-17b000ddf0ef" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>
+		</element>
+	</title>
+	<summary height="349" splitType="Stretch">
+		<element kind="chart" chartType="bar" uuid="24c76ad6-8e0c-46da-b687-9959fdc24788" x="40" y="74" width="454" height="200" evaluationTime="Report">
+			<titleFont fontName="Arial" fontSize="16.0" bold="true"/>
+			<titleExpression><![CDATA["Nombre de location par commune et par tranche de prix"]]></titleExpression>
+			<dataset kind="category">
+				<datasetRun uuid="d982d89e-0d91-4e74-badf-6868e40ca56f" subDataset="DATASET_HISTO_PRIX_MCARRE"/>
+				<series>
+					<seriesExpression><![CDATA["Nombre de commune"]]></seriesExpression>
+					<categoryExpression><![CDATA[$F{Tranche_Prix}]]></categoryExpression>
+					<valueExpression><![CDATA[$F{Nombre_Communes}]]></valueExpression>
+				</series>
+			</dataset>
+			<plot orientation="Horizontal" categoryAxisLabelColor="#000000" categoryAxisTickLabelColor="#000000" categoryAxisLineColor="#000000" valueAxisLabelColor="#000000" valueAxisTickLabelColor="#000000" valueAxisLineColor="#000000">
+				<categoryAxisLabelExpression><![CDATA["Tranche de prix en €"]]></categoryAxisLabelExpression>
+				<categoryAxisLabelFont fontName="SansSerif"/>
+				<valueAxisLabelExpression><![CDATA["Nombre de commune"]]></valueAxisLabelExpression>
+				<itemLabel/>
+				<seriesColor order="0" color="#E01933"/>
+			</plot>
+		</element>
+		<element kind="staticText" uuid="0c372b7b-4e25-4d70-8d59-87c6f0d79d33" x="13" y="280" width="508" height="59">
+			<text><![CDATA[Le graphique illustre la répartition des communes en fonction des tranches de prix moyens au mètre carré en région Occitanie. Il met en évidence que la majorité des communes se situent dans la tranche de prix entre 1 000 et 2 000 euros/m², tandis que les tranches supérieures à 4 000 euros/m² sont beaucoup moins représentées, témoignant d'une accessibilité globale des prix immobiliers dans la région.]]></text>
+		</element>
+	</summary>
+</jasperReport>
