@@ -1,0 +1,82 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Chart_Moy_Dep" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="23ccb1c2-4828-45b7-b659-0db1c5cf9021">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="b2NjaXRhbmllX3lpZWxkX2RiLmNvbW11bmVzX2RhdGEgQVMgLDQzLDI5LGFkYjY5NGZiLTIyYzIt&#xa;NDg2Zi1hYjU0LWIxOGQwODg4YTI0Yzs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+	<query language="SQL"><![CDATA[SELECT `INSEE_COM`,
+	`INSEE_DEP`,
+	`NOM_COM_M`,
+	`POPULATION`,
+	`PrixMoyen_M2_2223`,
+	`Prixm2Moyen_2022`,
+	`Prixm2Moyen_2023`,
+	loyer_apparts,
+	loyer_maisons,
+	`Rendement_locatif_apparts`,
+	`Rendement_locatif_maisons`
+FROM occitanie_yield_db.communes_data]]></query>
+	<field name="INSEE_COM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_COM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="INSEE_DEP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.label" value="INSEE_DEP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="NOM_COM_M" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="POPULATION" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.label" value="POPULATION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="PrixMoyen_M2_2223" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrixMoyen_M2_2223"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2022" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2023" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="loyer_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyer_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_apparts" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_apparts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Rendement_locatif_maisons" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Rendement_locatif_maisons"/>
+		<property name="com.jaspersoft.studio.field.label" value="Rendement_locatif_maisons"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch"/>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch"/>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
