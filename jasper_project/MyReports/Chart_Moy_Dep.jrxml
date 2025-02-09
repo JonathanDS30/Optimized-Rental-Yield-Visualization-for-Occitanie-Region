@@ -2,6 +2,53 @@
 <jasperReport name="Chart_Moy_Dep" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="23ccb1c2-4828-45b7-b659-0db1c5cf9021">
 	<property name="com.jaspersoft.studio.data.sql.tables" value="b2NjaXRhbmllX3lpZWxkX2RiLmNvbW11bmVzX2RhdGEgQVMgLDQzLDI5LGFkYjY5NGZiLTIyYzIt&#xa;NDg2Zi1hYjU0LWIxOGQwODg4YTI0Yzs="/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+	<property name="net.sf.jasperreports.components.map.key" value="AIzaSyC3yLW-6mPZ8C7jn9B17hyEu9viQ43Ju1I"/>
+	<dataset name="MOY_DEP" uuid="4d94f7e6-c61a-42be-a10a-98e75ce554e9">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+		<query language="SQL"><![CDATA[SELECT 
+    INSEE_DEP AS Department,
+    AVG(Rendement_locatif_apparts) AS Avg_Rendement_Apparts
+FROM 
+    communes_data
+GROUP BY 
+    INSEE_DEP
+ORDER BY 
+    Avg_Rendement_Apparts DESC
+]]></query>
+		<field name="Department" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+			<property name="com.jaspersoft.studio.field.label" value="Department"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="Avg_Rendement_Apparts" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Avg_Rendement_Apparts"/>
+			<property name="com.jaspersoft.studio.field.label" value="Avg_Rendement_Apparts"/>
+		</field>
+	</dataset>
+	<dataset name="MOY_DEP_HOUSE" uuid="76f151d6-5b9f-475d-87e6-840040808dc8">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+		<query language="SQL"><![CDATA[SELECT
+    INSEE_DEP AS Department,
+    AVG(Rendement_locatif_maisons) AS Avg_Rendement_Maisons
+FROM
+    communes_data
+GROUP BY
+    INSEE_DEP
+ORDER BY
+    Avg_Rendement_Maisons DESC;
+]]></query>
+		<field name="Department" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+			<property name="com.jaspersoft.studio.field.label" value="Department"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="Avg_Rendement_Maisons" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Avg_Rendement_Maisons"/>
+			<property name="com.jaspersoft.studio.field.label" value="Avg_Rendement_Maisons"/>
+		</field>
+	</dataset>
 	<query language="SQL"><![CDATA[SELECT `INSEE_COM`,
 	`INSEE_DEP`,
 	`NOM_COM_M`,
@@ -70,13 +117,55 @@ FROM occitanie_yield_db.communes_data]]></query>
 		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
 	</field>
 	<background splitType="Stretch"/>
-	<title height="79" splitType="Stretch"/>
-	<pageHeader height="35" splitType="Stretch"/>
-	<columnHeader height="61" splitType="Stretch"/>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
-	<columnFooter height="45" splitType="Stretch"/>
-	<pageFooter height="54" splitType="Stretch"/>
-	<summary height="42" splitType="Stretch"/>
+	<title height="140">
+		<element kind="rectangle" uuid="a79c17e8-cd6a-4723-b0e5-563533fab6a6" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
+			<pen lineColor="#C90000"/>
+		</element>
+		<element kind="image" uuid="971afa29-f619-483b-af96-198ff5f2ad2e" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
+			<expression><![CDATA["D:/Thomas/Documents/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+		</element>
+		<element kind="staticText" uuid="80fa9717-beef-44f5-91b2-d529f23d9f29" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Rendement moyen par département Locatifs en Région Occitanie]]></text>
+		</element>
+	</title>
+	<summary height="527" splitType="Stretch">
+		<element kind="chart" chartType="bar" uuid="b49630c5-8c02-48eb-85ad-5c1c538c1ade" x="7" y="40" width="540" height="200" evaluationTime="Report" theme="default">
+			<dataset kind="category">
+				<datasetRun uuid="5f33c856-8ded-4e2d-ac3b-a3e1203b429d" subDataset="MOY_DEP">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<seriesExpression><![CDATA["Moyenne des rendements locatif - Appartements"]]></seriesExpression>
+					<categoryExpression><![CDATA[$F{Department}]]></categoryExpression>
+					<valueExpression><![CDATA[$F{Avg_Rendement_Apparts}]]></valueExpression>
+					<labelExpression><![CDATA["test"]]></labelExpression>
+					<itemHyperlink linkType="None" linkTarget="Self"/>
+				</series>
+			</dataset>
+			<plot foregroundAlpha="0.94" categoryAxisLabelColor="#000000" categoryAxisTickLabelColor="#000000" categoryAxisLineColor="#000000" valueAxisLabelColor="#000000" valueAxisTickLabelColor="#000000" valueAxisLineColor="#000000">
+				<itemLabel/>
+				<seriesColor order="0" color="#8C81C9"/>
+			</plot>
+		</element>
+		<element kind="chart" chartType="bar" uuid="57611d18-9ae7-44ff-b832-c26797f3168e" x="7" y="240" width="540" height="200" evaluationTime="Report">
+			<dataset kind="category">
+				<datasetRun uuid="380e0646-ea76-4071-b0e8-2807f92dd74b" subDataset="MOY_DEP_HOUSE">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<seriesExpression><![CDATA["Moyenne des rendements locatif - Maisons"]]></seriesExpression>
+					<categoryExpression><![CDATA[$F{Department}]]></categoryExpression>
+					<valueExpression><![CDATA[$F{Avg_Rendement_Maisons}]]></valueExpression>
+				</series>
+			</dataset>
+			<plot categoryAxisLabelColor="#000000" categoryAxisTickLabelColor="#000000" categoryAxisLineColor="#000000" valueAxisLabelColor="#000000" valueAxisTickLabelColor="#000000" valueAxisLineColor="#000000">
+				<itemLabel/>
+				<seriesColor order="0" color="#74BE8B"/>
+				<seriesColor order="1" color="#E8CB14"/>
+			</plot>
+		</element>
+		<element kind="staticText" uuid="fcd720bc-b19a-4d9e-a263-b416adb6f27a" x="0" y="470" width="560" height="56" fontName="Arial" fontSize="13.0">
+			<text><![CDATA[Les départements de l'Aude, l'Ariège, le Tarn et Hautes-Pyrénées sont en haut du classement concernant le rendement locatif.]]></text>
+		</element>
+	</summary>
 </jasperReport>
