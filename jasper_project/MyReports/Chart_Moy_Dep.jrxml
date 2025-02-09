@@ -127,8 +127,8 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<text><![CDATA[Rendement moyen par département Locatifs en Région Occitanie]]></text>
 		</element>
 	</title>
-	<summary height="776" splitType="Stretch">
-		<element kind="chart" chartType="bar" uuid="b49630c5-8c02-48eb-85ad-5c1c538c1ade" x="7" y="40" width="540" height="200" evaluationTime="Report" theme="default">
+	<summary height="497" splitType="Stretch">
+		<element kind="chart" chartType="bar" uuid="b49630c5-8c02-48eb-85ad-5c1c538c1ade" x="7" y="10" width="540" height="180" evaluationTime="Report" theme="default">
 			<dataset kind="category">
 				<datasetRun uuid="5f33c856-8ded-4e2d-ac3b-a3e1203b429d" subDataset="MOY_DEP">
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
@@ -146,7 +146,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 				<seriesColor order="0" color="#8C81C9"/>
 			</plot>
 		</element>
-		<element kind="chart" chartType="bar" uuid="57611d18-9ae7-44ff-b832-c26797f3168e" x="7" y="240" width="540" height="200" evaluationTime="Report">
+		<element kind="chart" chartType="bar" uuid="57611d18-9ae7-44ff-b832-c26797f3168e" x="7" y="190" width="540" height="190" evaluationTime="Report">
 			<dataset kind="category">
 				<datasetRun uuid="380e0646-ea76-4071-b0e8-2807f92dd74b" subDataset="MOY_DEP_HOUSE">
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
@@ -163,8 +163,11 @@ FROM occitanie_yield_db.communes_data]]></query>
 				<seriesColor order="1" color="#E8CB14"/>
 			</plot>
 		</element>
-		<element kind="staticText" uuid="fcd720bc-b19a-4d9e-a263-b416adb6f27a" x="0" y="470" width="560" height="56" fontName="Arial" fontSize="13.0">
+		<element kind="staticText" uuid="fcd720bc-b19a-4d9e-a263-b416adb6f27a" x="0" y="390" width="560" height="56" fontName="Arial" fontSize="13.0">
 			<text><![CDATA[Les départements de l'Aude, l'Ariège, le Tarn et Hautes-Pyrénées sont en haut du classement concernant le rendement locatif.]]></text>
+		</element>
+		<element kind="staticText" uuid="e3456a2f-f58e-49df-9020-2648da9b5187" x="10" y="450" width="542" height="30">
+			<text><![CDATA[09 - Ariège | 11 - Aude | 12 - Aveyron | 30 - Gard | 31 - Haute-Garonne | 32 - Gers | 34 - Hérault | 46 - Lot | 48 - Lozère | 65 -  Hautes-Pyrénées | 66 - Pyrénées-Orientales | 81 - Tarn | 82 - Tarn-et-Garonne]]></text>
 		</element>
 	</summary>
 </jasperReport>
