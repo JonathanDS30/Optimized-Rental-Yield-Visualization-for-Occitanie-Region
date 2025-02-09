@@ -2,7 +2,6 @@
 <jasperReport name="Chart_Moy_Dep" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="23ccb1c2-4828-45b7-b659-0db1c5cf9021">
 	<property name="com.jaspersoft.studio.data.sql.tables" value="b2NjaXRhbmllX3lpZWxkX2RiLmNvbW11bmVzX2RhdGEgQVMgLDQzLDI5LGFkYjY5NGZiLTIyYzIt&#xa;NDg2Zi1hYjU0LWIxOGQwODg4YTI0Yzs="/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
-	<property name="net.sf.jasperreports.components.map.key" value="AIzaSyC3yLW-6mPZ8C7jn9B17hyEu9viQ43Ju1I"/>
 	<dataset name="MOY_DEP" uuid="4d94f7e6-c61a-42be-a10a-98e75ce554e9">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
@@ -128,7 +127,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<text><![CDATA[Rendement moyen par département Locatifs en Région Occitanie]]></text>
 		</element>
 	</title>
-	<summary height="527" splitType="Stretch">
+	<summary height="776" splitType="Stretch">
 		<element kind="chart" chartType="bar" uuid="b49630c5-8c02-48eb-85ad-5c1c538c1ade" x="7" y="40" width="540" height="200" evaluationTime="Report" theme="default">
 			<dataset kind="category">
 				<datasetRun uuid="5f33c856-8ded-4e2d-ac3b-a3e1203b429d" subDataset="MOY_DEP">
