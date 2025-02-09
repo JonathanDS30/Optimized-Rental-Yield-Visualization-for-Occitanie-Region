@@ -127,7 +127,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
 	</field>
 	<background splitType="Stretch"/>
-	<title height="140" splitType="Stretch">
+	<title height="142" splitType="Stretch">
 		<element kind="rectangle" uuid="962fd261-cfcb-4fa8-95f0-265b85943d07" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
 			<pen lineColor="#C90000"/>
 		</element>
@@ -138,102 +138,95 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>
 		</element>
 	</title>
-	<pageHeader height="35" splitType="Stretch"/>
-	<columnHeader height="61" splitType="Stretch"/>
-	<detail>
-		<band height="220" splitType="Stretch">
-			<element kind="component" uuid="49b49d96-33be-4b95-b810-970edb816c06" x="0" y="0" width="560" height="210">
-				<component kind="table">
-					<datasetRun uuid="98cd4a34-30a9-47bf-841a-9ef05d0328e7" subDataset="Tableau récapitulatif des rendements locatifs par ville">
-						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					</datasetRun>
-					<column kind="single" uuid="bc86e4b5-df7e-4364-a857-23a67348a21e" width="93">
-						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="6c22d6e5-a7b6-4218-90b4-1cbed68b670c" x="0" y="0" width="93" height="30">
-								<text><![CDATA[NOM_COM_M]]></text>
-							</element>
-						</columnHeader>
-						<columnFooter height="30" style="Table_CH"/>
-						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="5c99015b-47e6-42c2-9a5b-fe028fbad7e1" x="0" y="0" width="93" height="30">
-								<expression><![CDATA[$F{NOM_COM_M}]]></expression>
-							</element>
-						</detailCell>
-					</column>
-					<column kind="single" uuid="aa5d69e6-f9af-46e1-b4cb-5d77da7fe7f4" width="94">
-						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="e8d30c57-1a34-47a7-b971-4fc92e5d5c1e" x="0" y="0" width="94" height="30">
-								<text><![CDATA[INSEE_DEP]]></text>
-							</element>
-						</columnHeader>
-						<columnFooter height="30" style="Table_CH"/>
-						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="d959e8dd-0fa3-4efc-90fa-44729541649e" x="0" y="0" width="94" height="30">
-								<expression><![CDATA[$F{INSEE_DEP}]]></expression>
-							</element>
-						</detailCell>
-					</column>
-					<column kind="single" uuid="b2c73e97-5ad4-49cc-97a1-1f5cbb780b3e" width="94">
-						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="4f1bf039-2728-45bc-9c5b-88880c0c8770" x="0" y="0" width="94" height="30">
-								<text><![CDATA[POPULATION]]></text>
-							</element>
-						</columnHeader>
-						<columnFooter height="30" style="Table_CH"/>
-						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="61f38c3f-1958-483c-96bc-3df7fa7fa091" x="0" y="0" width="94" height="30">
-								<expression><![CDATA[$F{POPULATION}]]></expression>
-							</element>
-						</detailCell>
-					</column>
-					<column kind="single" uuid="1de700c9-923f-44cd-ad05-3f05028d56b9" width="93">
-						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="9ee717e0-d28d-4c52-8804-5ce51fb00bdc" x="0" y="0" width="93" height="30">
-								<text><![CDATA[PrixMoyen_M2_2223]]></text>
-							</element>
-						</columnHeader>
-						<columnFooter height="30" style="Table_CH"/>
-						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="40f17956-6d8c-4787-b99c-833c674ff944" x="0" y="0" width="93" height="30">
-								<expression><![CDATA[$F{PrixMoyen_M2_2223}]]></expression>
-							</element>
-						</detailCell>
-					</column>
-					<column kind="single" uuid="d42e6e85-6de5-4ba5-b7e7-3709b1ae1908" width="93">
-						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="da98cec7-8dfa-4654-ad58-8738e3656abe" x="0" y="0" width="93" height="30">
-								<text><![CDATA[Rendement_locatif_apparts]]></text>
-							</element>
-						</columnHeader>
-						<columnFooter height="30" style="Table_CH"/>
-						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="1e920917-b2dc-4300-9010-caa6f6270f28" x="0" y="0" width="93" height="30">
-								<expression><![CDATA[$F{Rendement_locatif_apparts}]]></expression>
-							</element>
-						</detailCell>
-					</column>
-					<column kind="single" uuid="0b1d5136-54a8-4562-9c09-b189c5795627" width="93">
-						<columnHeader height="30" style="Table_CH">
-							<element kind="staticText" uuid="13527284-add9-45a6-bc2d-4018f0870c5b" x="0" y="0" width="93" height="30">
-								<text><![CDATA[Rendement_locatif_maisons]]></text>
-							</element>
-						</columnHeader>
-						<columnFooter height="30" style="Table_CH"/>
-						<detailCell height="30" style="Table_TD">
-							<element kind="textField" uuid="0e743f56-9c6d-4d75-a0c7-6335bd949c66" x="0" y="0" width="93" height="30">
-								<expression><![CDATA[$F{Rendement_locatif_maisons}]]></expression>
-							</element>
-						</detailCell>
-					</column>
-				</component>
-				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
-				<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
-				<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
-			</element>
-		</band>
-	</detail>
-	<columnFooter height="45" splitType="Stretch"/>
-	<pageFooter height="54" splitType="Stretch"/>
-	<summary height="42" splitType="Stretch"/>
+	<summary height="120" splitType="Stretch">
+		<element kind="component" uuid="49b49d96-33be-4b95-b810-970edb816c06" x="-3" y="10" width="560" height="60">
+			<component kind="table">
+				<datasetRun uuid="98cd4a34-30a9-47bf-841a-9ef05d0328e7" subDataset="Tableau récapitulatif des rendements locatifs par ville">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<column kind="single" uuid="bc86e4b5-df7e-4364-a857-23a67348a21e" width="93">
+					<columnHeader height="30" style="Table_CH">
+						<element kind="staticText" uuid="6c22d6e5-a7b6-4218-90b4-1cbed68b670c" x="0" y="0" width="93" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Commune]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table_TD">
+						<element kind="textField" uuid="5c99015b-47e6-42c2-9a5b-fe028fbad7e1" x="0" y="0" width="93" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{NOM_COM_M}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+				</column>
+				<column kind="single" uuid="aa5d69e6-f9af-46e1-b4cb-5d77da7fe7f4" width="94">
+					<columnHeader height="30" style="Table_CH">
+						<element kind="staticText" uuid="e8d30c57-1a34-47a7-b971-4fc92e5d5c1e" x="0" y="0" width="94" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Département]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table_TD">
+						<element kind="textField" uuid="d959e8dd-0fa3-4efc-90fa-44729541649e" x="0" y="0" width="94" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{INSEE_DEP}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+				</column>
+				<column kind="single" uuid="b2c73e97-5ad4-49cc-97a1-1f5cbb780b3e" width="94">
+					<columnHeader height="30" style="Table_CH">
+						<element kind="staticText" uuid="4f1bf039-2728-45bc-9c5b-88880c0c8770" x="0" y="0" width="94" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Nombre d'Habitants]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table_TD">
+						<element kind="textField" uuid="61f38c3f-1958-483c-96bc-3df7fa7fa091" x="0" y="0" width="94" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{POPULATION}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+				</column>
+				<column kind="single" uuid="1de700c9-923f-44cd-ad05-3f05028d56b9" width="93">
+					<columnHeader height="30" style="Table_CH">
+						<element kind="staticText" uuid="9ee717e0-d28d-4c52-8804-5ce51fb00bdc" x="0" y="0" width="93" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Prix Moyen au m² (2022-2023)]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table_TD">
+						<element kind="textField" uuid="40f17956-6d8c-4787-b99c-833c674ff944" x="0" y="0" width="93" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{PrixMoyen_M2_2223} + " €"]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+				</column>
+				<column kind="single" uuid="d42e6e85-6de5-4ba5-b7e7-3709b1ae1908" width="93">
+					<columnHeader height="30" style="Table_CH">
+						<element kind="staticText" uuid="da98cec7-8dfa-4654-ad58-8738e3656abe" x="0" y="0" width="93" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Rendement Locatif des Appartements]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table_TD">
+						<element kind="textField" uuid="1e920917-b2dc-4300-9010-caa6f6270f28" x="0" y="0" width="93" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{Rendement_locatif_apparts} + " %"]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+				</column>
+				<column kind="single" uuid="0b1d5136-54a8-4562-9c09-b189c5795627" width="93">
+					<columnHeader height="30" style="Table_CH">
+						<element kind="staticText" uuid="13527284-add9-45a6-bc2d-4018f0870c5b" x="0" y="0" width="93" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Rendement Locatif des Maisons]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table_TD">
+						<element kind="textField" uuid="0e743f56-9c6d-4d75-a0c7-6335bd949c66" x="0" y="0" width="93" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{Rendement_locatif_maisons} + " %"]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+				</column>
+			</component>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+			<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+			<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+		</element>
+	</summary>
 </jasperReport>
