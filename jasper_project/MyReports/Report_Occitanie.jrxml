@@ -1,7 +1,7 @@
 <!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
 <jasperReport name="Report_Occitanie" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="abdde730-b516-4936-ab49-802195e54a1b">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IMMO_BDD"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -132,7 +132,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<pen lineColor="#C90000"/>
 		</element>
 		<element kind="image" uuid="4bc73a4d-923c-4716-89d7-55a4d338c004" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
-			<expression><![CDATA["D:\\Dossier Compte Pro\\Documents\\00 - EPSI\\01 - ATL VISU DATA\\DataVisualisation Jasper\\Optimized-Rental-Yield-Visualization-for-Occitanie-Region\\docs\\Logo_Occitanie.png"]]></expression>
+			<expression><![CDATA["C:/Users/leon/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
 		</element>
 		<element kind="staticText" uuid="8ccd4782-c595-47fb-b730-437c4399703e" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
 			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>

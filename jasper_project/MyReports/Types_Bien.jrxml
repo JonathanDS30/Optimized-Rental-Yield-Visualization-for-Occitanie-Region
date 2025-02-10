@@ -1,7 +1,7 @@
 <!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
 <jasperReport name="Types_Bien" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc0b2249-64ea-450b-8770-1f04cff8c79c">
-	<property name="com.jaspersoft.studio.data.sql.tables" value="b2NjaXRhbmllX3lpZWxkX2RiLmNvbW11bmVzX2RhdGEgQVMgLDk3LDc0LDlhMWYwZjBjLTY3ZDQt&#xa;NDVlMC05NzA3LTE0ZTdkZjk0ZWI4Zjs="/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IMMO_BDD"/>
 	<dataset name="PieChart_Biens" uuid="13c2859a-c904-4b7d-81de-9164916da944">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
@@ -108,7 +108,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
 		</element>
 		<element kind="image" uuid="30423c0a-2dc2-4a91-90b4-e37d8bfe4230" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
-			<expression><![CDATA["D:/Thomas/Documents/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+			<expression><![CDATA["C:/Users/leon/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
 		</element>
 	</title>
 	<summary height="607" splitType="Stretch">
