@@ -100,7 +100,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<pen lineColor="#C90000"/>
 		</element>
 		<element kind="image" uuid="a5cff9d7-b36b-4d2c-9aa2-d5db04d6a3e6" x="-20" y="0" width="180" height="140">
-			<expression><![CDATA["C:/Users/leon/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
 		</element>
 		<element kind="staticText" uuid="c41c3d3e-dc50-438a-adb9-17b000ddf0ef" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
 			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>
