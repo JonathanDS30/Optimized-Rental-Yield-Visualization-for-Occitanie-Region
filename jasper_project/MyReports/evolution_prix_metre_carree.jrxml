@@ -39,7 +39,7 @@ ORDER BY
 			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
 		</element>
 		<element kind="image" uuid="4247403a-1cf9-47ce-a361-3b910095d8a1" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
-			<expression><![CDATA["C:/Users/leon/GitHub/Optimized-Rental-Yield-Visualization-for-Occitanie-Region/docs/Logo_Occitanie.png"]]></expression>
+			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
 		</element>
 	</title>
 	<summary height="394" splitType="Stretch">
