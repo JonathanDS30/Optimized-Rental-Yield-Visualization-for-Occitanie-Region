@@ -138,8 +138,16 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>
 		</element>
 	</title>
-	<summary height="120" splitType="Stretch">
-		<element kind="component" uuid="49b49d96-33be-4b95-b810-970edb816c06" x="-3" y="10" width="560" height="60">
+	<pageFooter height="50">
+		<element kind="textField" uuid="57affcfb-1c88-4310-930b-78f47ad79b1f" x="180" y="10" width="100" height="30" hTextAlign="Right">
+			<expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="5ae1d43a-59e6-46dd-b154-c67c4d5f662e" x="280" y="10" width="100" height="30" evaluationTime="Report" hTextAlign="Left">
+			<expression><![CDATA[" of " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="86" splitType="Stretch">
+		<element kind="component" uuid="49b49d96-33be-4b95-b810-970edb816c06" x="-3" y="20" width="560" height="60">
 			<component kind="table">
 				<datasetRun uuid="98cd4a34-30a9-47bf-841a-9ef05d0328e7" subDataset="Tableau récapitulatif des rendements locatifs par ville">
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>

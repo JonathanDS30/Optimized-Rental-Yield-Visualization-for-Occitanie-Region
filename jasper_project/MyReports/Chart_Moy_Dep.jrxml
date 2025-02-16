@@ -4,7 +4,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
 	<dataset name="MOY_DEP" uuid="4d94f7e6-c61a-42be-a10a-98e75ce554e9">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
 		<query language="SQL"><![CDATA[SELECT 
     INSEE_DEP AS Department,
     AVG(Rendement_locatif_apparts) AS Avg_Rendement_Apparts
