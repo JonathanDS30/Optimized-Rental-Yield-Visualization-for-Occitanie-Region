@@ -1,0 +1,180 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Evo_prix_moyen_m²" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16444d2a-342a-474e-b80c-b666d4e3d41a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFD800">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#FFD800">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<dataset name="Dataset1" uuid="342416fc-9087-48b7-b53e-7721ff317287">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
+		<query language="SQL"><![CDATA[SELECT 
+    NOM_COM_M, 
+    Prixm2Moyen_2022,
+    Prixm2Moyen_2023 
+ FROM 
+    communes_data
+ORDER BY 
+    NOM_COM_M
+]]></query>
+		<field name="NOM_COM_M" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NOM_COM_M"/>
+			<property name="com.jaspersoft.studio.field.label" value="NOM_COM_M"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="Prixm2Moyen_2022" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2022"/>
+			<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2022"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+		<field name="Prixm2Moyen_2023" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2023"/>
+			<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2023"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+		</field>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT 
+    NOM_COM_M, 
+    Prixm2Moyen_2022,
+    Prixm2Moyen_2023
+FROM 
+    communes_data
+ORDER BY 
+    NOM_COM_M
+]]></query>
+	<field name="NOM_COM_M" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOM_COM_M"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2022" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2022"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<field name="Prixm2Moyen_2023" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prixm2Moyen_2023"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="140" splitType="Stretch">
+		<element kind="rectangle" uuid="fc57c10a-6a3a-40f9-867f-b89160c8d786" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
+			<pen lineColor="#C90000"/>
+		</element>
+		<element kind="staticText" uuid="a2ae1f19-a089-413b-8a8c-f1258e4f0966" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Evolution du prix moyen au mètre carré par commune]]></text>
+		</element>
+		<element kind="image" uuid="b4c96ff7-26d0-4c60-8a07-54a4bda561e4" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
+			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
+		</element>
+	</title>
+	<pageFooter height="50">
+		<element kind="textField" uuid="6688154f-c3d8-43e8-90d3-cf5c02b48bf6" x="174" y="10" width="100" height="30" hTextAlign="Right">
+			<expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="9632df35-c8ac-4a53-9a4a-8fdf1bf8548d" x="275" y="10" width="100" height="30" evaluationTime="Report" hTextAlign="Left">
+			<expression><![CDATA[" of " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="169" splitType="Stretch">
+		<element kind="component" uuid="9f49246d-da4f-4cac-b9e7-76eeda2e4d62" x="170" y="40" width="200" height="65">
+			<component kind="table">
+				<datasetRun uuid="73013957-641f-4979-8569-b173193f346b" subDataset="Dataset1">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<column kind="single" uuid="ca3880f3-e6a8-4e37-9d35-f1deebe8c101" width="66">
+					<tableHeader height="30" style="Table 1_TH">
+						<element kind="staticText" uuid="0b469d69-ba33-47c7-a5ce-b2baf530e242" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Communes]]></text>
+						</element>
+					</tableHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="5725ca0d-af8b-412d-903b-f90f4adee6e8" x="0" y="0" width="66" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{NOM_COM_M}]]></expression>
+						</element>
+					</detailCell>
+				</column>
+				<column kind="single" uuid="29371ee2-06c1-40e7-9e50-ba154c51f408" width="66">
+					<tableHeader height="30" style="Table 1_TH">
+						<element kind="staticText" uuid="dccaa055-6f50-4361-a8c2-83cb933adc32" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Prix moyen en 2022]]></text>
+						</element>
+					</tableHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="b817e23c-f260-4f92-9676-7492bb6527f4" x="0" y="0" width="66" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{Prixm2Moyen_2022}+ " €"]]></expression>
+						</element>
+					</detailCell>
+				</column>
+				<column kind="single" uuid="42bc0773-89b8-4315-9c3d-2561250e729b" width="66">
+					<tableHeader height="30" style="Table 1_TH">
+						<element kind="staticText" uuid="6772e073-1fad-4dc4-9c42-500c77d4c45f" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Prix moyen en 2023]]></text>
+						</element>
+					</tableHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="1b1ddffd-7ed0-4d08-a38f-244a515bb25c" x="0" y="0" width="66" height="30" hTextAlign="Center">
+							<expression><![CDATA[$F{Prixm2Moyen_2023} + " €"]]></expression>
+						</element>
+					</detailCell>
+				</column>
+			</component>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+			<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+			<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+		</element>
+	</summary>
+</jasperReport>
