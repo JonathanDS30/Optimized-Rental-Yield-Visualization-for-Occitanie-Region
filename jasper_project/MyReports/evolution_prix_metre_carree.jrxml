@@ -42,16 +42,5 @@ ORDER BY
 			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
 		</element>
 	</title>
-	<summary height="394" splitType="Stretch">
-		<element kind="chart" chartType="line" uuid="159e3157-32ab-43fc-8e6a-64f40e96b469" x="30" y="10" width="510" height="350" evaluationTime="Report">
-			<dataset kind="category">
-				<series>
-					<seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
-					<categoryExpression><![CDATA[0]]></categoryExpression>
-					<valueExpression><![CDATA[$F{Prixm2Moyen_2022}]]></valueExpression>
-				</series>
-			</dataset>
-			<plot categoryAxisLabelColor="#000000" categoryAxisTickLabelColor="#000000" categoryAxisLineColor="#000000" valueAxisLabelColor="#000000" valueAxisTickLabelColor="#000000" valueAxisLineColor="#000000"/>
-		</element>
-	</summary>
+	<summary height="394" splitType="Stretch"/>
 </jasperReport>
