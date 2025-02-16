@@ -32,7 +32,7 @@ WHERE
 		<element kind="rectangle" uuid="06a865b9-5854-4514-a7da-313d78bf4683" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
 			<pen lineColor="#C90000"/>
 		</element>
-		<element kind="staticText" uuid="194ad67c-52dc-46b7-95d1-565379644741" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+		<element kind="staticText" uuid="194ad67c-52dc-46b7-95d1-565379644741" x="180" y="36" width="370" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
 			<text><![CDATA[Comparaison du prix moyen au mètre carré des appartements et des maisons]]></text>
 		</element>
 		<element kind="image" uuid="3a6fadf1-adc3-4962-9c52-4edb316ca647" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
@@ -62,7 +62,7 @@ WHERE
 			</dataset>
 			<plot/>
 		</element>
-		<element kind="staticText" uuid="4eaa1c5b-17d7-4c77-9e19-9ebea8b30627" x="0" y="270" width="560" height="70">
+		<element kind="staticText" uuid="4eaa1c5b-17d7-4c77-9e19-9ebea8b30627" x="0" y="270" width="550" height="70">
 			<text><![CDATA[Ce double graphique illustre la relation entre le prix moyen au mètre carré et le rendement locatif pour les appartements et les maisons en région Occitanie. On observe une tendance générale : les rendements locatifs diminuent à mesure que le prix moyen au mètre carré augmente, ce qui suggère une corrélation inverse entre le coût d'acquisition et la rentabilité locative.]]></text>
 		</element>
 	</summary>
