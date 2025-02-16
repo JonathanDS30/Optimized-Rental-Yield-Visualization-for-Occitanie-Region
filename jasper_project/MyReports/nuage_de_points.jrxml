@@ -33,7 +33,7 @@ WHERE
 			<pen lineColor="#C90000"/>
 		</element>
 		<element kind="staticText" uuid="194ad67c-52dc-46b7-95d1-565379644741" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
-			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
+			<text><![CDATA[Comparaison du prix moyen au mètre carré des appartements et des maisons]]></text>
 		</element>
 		<element kind="image" uuid="3a6fadf1-adc3-4962-9c52-4edb316ca647" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
 			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
@@ -41,21 +41,23 @@ WHERE
 	</title>
 	<summary height="381" splitType="Stretch">
 		<element kind="chart" chartType="scatter" uuid="7c26a793-00a8-401a-8f8b-1f1f14d07f4c" x="30" y="40" width="200" height="200" evaluationTime="Report">
+			<titleFont fontSize="10.0" bold="true"/>
 			<dataset kind="xy">
 				<series>
 					<seriesExpression><![CDATA["Appartements"]]></seriesExpression>
-					<yvalueExpression><![CDATA[$F{Rendement_locatif_apparts}]]></yvalueExpression>
 					<xvalueExpression><![CDATA[$F{PrixMoyen_M2_2223}]]></xvalueExpression>
+					<yvalueExpression><![CDATA[$F{Rendement_locatif_apparts}]]></yvalueExpression>
 				</series>
 			</dataset>
 			<plot/>
 		</element>
 		<element kind="chart" chartType="scatter" uuid="dee62ce2-8831-4f13-b842-26fa66c2910d" x="310" y="40" width="200" height="200" evaluationTime="Report">
+			<titleFont fontSize="10.0" bold="true"/>
 			<dataset kind="xy">
 				<series>
 					<seriesExpression><![CDATA["Maison"]]></seriesExpression>
-					<yvalueExpression><![CDATA[$F{Rendement_locatif_maisons}]]></yvalueExpression>
 					<xvalueExpression><![CDATA[$F{PrixMoyen_M2_2223}]]></xvalueExpression>
+					<yvalueExpression><![CDATA[$F{Rendement_locatif_maisons}]]></yvalueExpression>
 				</series>
 			</dataset>
 			<plot/>
