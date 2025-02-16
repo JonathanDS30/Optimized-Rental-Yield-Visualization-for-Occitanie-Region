@@ -105,7 +105,7 @@ FROM occitanie_yield_db.communes_data]]></query>
 			<pen lineColor="#C90000"/>
 		</element>
 		<element kind="staticText" uuid="a65f9c17-a419-44aa-8d89-a9cb5906919d" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
-			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
+			<text><![CDATA[Types de bien par département en région Occitanie]]></text>
 		</element>
 		<element kind="image" uuid="30423c0a-2dc2-4a91-90b4-e37d8bfe4230" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
 			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
