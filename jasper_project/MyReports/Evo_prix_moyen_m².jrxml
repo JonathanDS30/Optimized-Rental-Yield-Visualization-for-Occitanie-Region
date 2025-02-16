@@ -135,7 +135,7 @@ ORDER BY
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				</datasetRun>
 				<column kind="single" uuid="ca3880f3-e6a8-4e37-9d35-f1deebe8c101" width="66">
-					<tableHeader height="30" style="Table 1_TH">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH">
 						<element kind="staticText" uuid="0b469d69-ba33-47c7-a5ce-b2baf530e242" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
 							<text><![CDATA[Communes]]></text>
 						</element>
@@ -145,9 +145,10 @@ ORDER BY
 							<expression><![CDATA[$F{NOM_COM_M}]]></expression>
 						</element>
 					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
 				</column>
 				<column kind="single" uuid="29371ee2-06c1-40e7-9e50-ba154c51f408" width="66">
-					<tableHeader height="30" style="Table 1_TH">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH">
 						<element kind="staticText" uuid="dccaa055-6f50-4361-a8c2-83cb933adc32" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
 							<text><![CDATA[Prix moyen en 2022]]></text>
 						</element>
@@ -157,9 +158,10 @@ ORDER BY
 							<expression><![CDATA[$F{Prixm2Moyen_2022}+ " €"]]></expression>
 						</element>
 					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 				</column>
 				<column kind="single" uuid="42bc0773-89b8-4315-9c3d-2561250e729b" width="66">
-					<tableHeader height="30" style="Table 1_TH">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH">
 						<element kind="staticText" uuid="6772e073-1fad-4dc4-9c42-500c77d4c45f" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
 							<text><![CDATA[Prix moyen en 2023]]></text>
 						</element>
@@ -169,6 +171,22 @@ ORDER BY
 							<expression><![CDATA[$F{Prixm2Moyen_2023} + " €"]]></expression>
 						</element>
 					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+				</column>
+				<column kind="single" uuid="9c2d26a9-7a84-412e-97e8-f19f7ee882a9" width="66">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH">
+						<element kind="staticText" uuid="c3d8f725-bd45-484b-bf26-f9dbf1f8cac5" x="0" y="0" width="66" height="30" bold="true" hTextAlign="Center">
+							<text><![CDATA[Pourcentage de différence entre 2022 et 2023]]></text>
+						</element>
+					</tableHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="4e7b0799-b3fa-4282-9d44-07450ccf52d3" x="0" y="0" width="66" height="30" hTextAlign="Center">
+							<expression><![CDATA[new java.text.DecimalFormat("#.##").format(
+    (($F{Prixm2Moyen_2023}.doubleValue() - $F{Prixm2Moyen_2022}.doubleValue()) / $F{Prixm2Moyen_2022}.doubleValue()) * 100
+) + " %"]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
 				</column>
 			</component>
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
