@@ -1,5 +1,5 @@
 <!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
-<jasperReport name="nuage_de_points" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73639bf3-492c-4a89-9429-c6983b32607b">
+<jasperReport name="nuage_de_points" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="becf50c0-2d48-4844-b9a4-ab7909ac6141">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
 	<query language="SQL"><![CDATA[SELECT 
@@ -29,24 +29,18 @@ WHERE
 	</field>
 	<background splitType="Stretch"/>
 	<title height="140" splitType="Stretch">
-		<element kind="image" uuid="26af38d8-4eea-43ca-9655-e72edbf02222" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
-			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
-		</element>
-		<element kind="staticText" uuid="e65c43fd-1e62-43ba-8148-12d1d3b48a64" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
-			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
-		</element>
-		<element kind="rectangle" uuid="8548e454-3bc3-4225-9609-53ba4a0271c6" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
+		<element kind="rectangle" uuid="06a865b9-5854-4514-a7da-313d78bf4683" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
 			<pen lineColor="#C90000"/>
 		</element>
-		<element kind="staticText" uuid="31151df6-0dab-42f8-992e-9aeadbe65bed" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
+		<element kind="staticText" uuid="194ad67c-52dc-46b7-95d1-565379644741" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
 			<text><![CDATA[Types de bien par département en Région Occitanie]]></text>
 		</element>
-		<element kind="image" uuid="c79fbec5-ef4e-4bab-8286-8dbf7d8f4490" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
+		<element kind="image" uuid="3a6fadf1-adc3-4962-9c52-4edb316ca647" stretchType="ElementGroupHeight" x="-20" y="0" width="200" height="140" forecolor="#C90000" backcolor="#C90000">
 			<expression><![CDATA["../../docs/Logo_Occitanie.png"]]></expression>
 		</element>
 	</title>
-	<summary height="380" splitType="Stretch">
-		<element kind="chart" chartType="scatter" uuid="c13ff171-20a6-4c1d-997a-ce9678e0a232" x="0" y="17" width="280" height="300" evaluationTime="Report">
+	<summary height="381" splitType="Stretch">
+		<element kind="chart" chartType="scatter" uuid="7c26a793-00a8-401a-8f8b-1f1f14d07f4c" x="30" y="40" width="200" height="200" evaluationTime="Report">
 			<dataset kind="xy">
 				<series>
 					<seriesExpression><![CDATA["Appartements"]]></seriesExpression>
@@ -54,9 +48,9 @@ WHERE
 					<xvalueExpression><![CDATA[$F{PrixMoyen_M2_2223}]]></xvalueExpression>
 				</series>
 			</dataset>
-			<plot xAxisLineColor="#000000" yAxisLineColor="#000000" xAxisTickLabelColor="#000000" yAxisLabelColor="#000000" yAxisTickLabelColor="#000000" xAxisLabelColor="#000000"/>
+			<plot/>
 		</element>
-		<element kind="chart" chartType="scatter" uuid="0b9edc9b-083c-4050-80ce-c5a4dfbc4ac9" x="290" y="19" width="270" height="300" evaluationTime="Report">
+		<element kind="chart" chartType="scatter" uuid="dee62ce2-8831-4f13-b842-26fa66c2910d" x="310" y="40" width="200" height="200" evaluationTime="Report">
 			<dataset kind="xy">
 				<series>
 					<seriesExpression><![CDATA["Maison"]]></seriesExpression>
@@ -64,9 +58,9 @@ WHERE
 					<xvalueExpression><![CDATA[$F{PrixMoyen_M2_2223}]]></xvalueExpression>
 				</series>
 			</dataset>
-			<plot xAxisLineColor="#000000" yAxisLineColor="#000000" xAxisTickLabelColor="#000000" yAxisLabelColor="#000000" yAxisTickLabelColor="#000000" xAxisLabelColor="#000000"/>
+			<plot/>
 		</element>
-		<element kind="staticText" uuid="b582cbfe-1c6c-4a89-ab07-22000989cebc" x="0" y="339" width="560" height="41">
+		<element kind="staticText" uuid="4eaa1c5b-17d7-4c77-9e19-9ebea8b30627" x="0" y="270" width="560" height="70">
 			<text><![CDATA[Ce double graphique illustre la relation entre le prix moyen au mètre carré et le rendement locatif pour les appartements et les maisons en région Occitanie. On observe une tendance générale : les rendements locatifs diminuent à mesure que le prix moyen au mètre carré augmente, ce qui suggère une corrélation inverse entre le coût d'acquisition et la rentabilité locative.]]></text>
 		</element>
 	</summary>
