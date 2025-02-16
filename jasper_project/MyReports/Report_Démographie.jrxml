@@ -66,6 +66,28 @@ ORDER BY
 			<property name="com.jaspersoft.studio.field.label" value="Population_Totale"/>
 		</field>
 	</dataset>
+	<dataset name="Taux de chomage par département" uuid="8fc2a765-c484-4c14-920f-076e85e840a9">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
+		<query language="SQL"><![CDATA[SELECT 
+    INSEE_DEP AS Département,
+    Taux_Chomage_2022
+FROM 
+    departements_data
+ORDER BY 
+    Taux_Chomage_2022 DESC
+]]></query>
+		<field name="Département" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="INSEE_DEP"/>
+			<property name="com.jaspersoft.studio.field.label" value="Département"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="departements_data"/>
+		</field>
+		<field name="Taux_Chomage_2022" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Taux_Chomage_2022"/>
+			<property name="com.jaspersoft.studio.field.label" value="Taux_Chomage_2022"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="departements_data"/>
+		</field>
+	</dataset>
 	<query language="SQL"><![CDATA[SELECT * FROM occitanie_yield_db.communes_data]]></query>
 	<field name="INSEE_COM" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="INSEE_COM"/>
@@ -123,7 +145,7 @@ ORDER BY
 		<property name="com.jaspersoft.studio.field.tree.path" value="communes_data"/>
 	</field>
 	<background splitType="Stretch"/>
-	<title height="142" splitType="Stretch">
+	<title height="183" splitType="Stretch">
 		<element kind="rectangle" uuid="962fd261-cfcb-4fa8-95f0-265b85943d07" x="-20" y="0" width="595" height="140" forecolor="#C90000" backcolor="#C90000">
 			<pen lineColor="#C90000"/>
 		</element>
@@ -133,9 +155,13 @@ ORDER BY
 		<element kind="staticText" uuid="8ccd4782-c595-47fb-b730-437c4399703e" x="180" y="36" width="380" height="80" forecolor="#FFFFFF" fontName="Arial" fontSize="22.0" bold="true" hTextAlign="Center">
 			<text><![CDATA[Analyse et Visualisation des Rendements Locatifs en Région Occitanie]]></text>
 		</element>
+		<element kind="staticText" uuid="deae541d-8b10-400d-8350-11a5dbaf9632" x="20" y="152" width="433" height="20" fontSize="15.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Analyse Démographique des Départements de l'Occitanie]]></text>
+		</element>
 	</title>
-	<summary height="590" splitType="Stretch">
-		<element kind="chart" chartType="pie" uuid="91c5417e-c4f7-45d1-800f-b61dd5d83434" x="0" y="30" width="555" height="340" showLegend="false" evaluationTime="Report">
+	<summary height="613" splitType="Stretch">
+		<element kind="chart" chartType="pie" uuid="91c5417e-c4f7-45d1-800f-b61dd5d83434" x="-3" y="10" width="560" height="230" showLegend="false" evaluationTime="Report">
+			<titleExpression><![CDATA["Répartition de la Population par Département en Occitanie"]]></titleExpression>
 			<dataset kind="pie">
 				<datasetRun uuid="4b89d6a6-965a-47c7-beb8-3956ba501d7f" subDataset="Démographie"/>
 				<series>
@@ -148,14 +174,31 @@ ORDER BY
 				<itemLabel/>
 			</plot>
 		</element>
-		<element kind="staticText" uuid="deae541d-8b10-400d-8350-11a5dbaf9632" x="27" y="10" width="433" height="20" fontSize="15.0" bold="true" hTextAlign="Left">
-			<text><![CDATA[Analyse Démographique des Départements de l'Occitanie]]></text>
+		<element kind="staticText" uuid="f454a234-91d5-4a08-821a-51666f14b399" x="16" y="470" width="523" height="70">
+			<text><![CDATA[Les graphiques illustrent la répartition de la population et le taux de chômage par département en région Occitanie. La Haute-Garonne (31) et l'Hérault (34) regroupent la majorité des habitants, tandis que des départements comme le Lot (46) et la Lozère (48) ont une population nettement plus faible. Concernant le chômage, les Pyrénées-Orientales (66) et l'Hérault (34) affichent les taux les plus élevés, tandis que le Gers (32) et la Lozère (48) se distinguent par des taux plus faibles, révélant des disparités démographiques et économiques marquées.]]></text>
 		</element>
-		<element kind="staticText" uuid="0787946f-cf54-4d92-a34f-d3af20685a3c" x="2" y="370" width="542" height="30">
+		<element kind="chart" chartType="bar" uuid="e5ffef08-1336-4104-917d-b969b0f768b6" x="7" y="270" width="540" height="180" evaluationTime="Report" theme="default">
+			<titleExpression><![CDATA["Taux de Chômage par Département en Occitanie"]]></titleExpression>
+			<dataset kind="category">
+				<datasetRun uuid="90bd55f2-c694-4f5a-ad98-8c2cf4c4b5a9" subDataset="Taux de chomage par département">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<seriesExpression><![CDATA["Taux de chômage par département"]]></seriesExpression>
+					<categoryExpression><![CDATA[$F{Département}]]></categoryExpression>
+					<valueExpression><![CDATA[$F{Taux_Chomage_2022}]]></valueExpression>
+					<labelExpression><![CDATA[$F{Taux_Chomage_2022} + " %" ]]></labelExpression>
+					<itemHyperlink linkType="None" linkTarget="Self"/>
+				</series>
+			</dataset>
+			<plot foregroundAlpha="0.94" categoryAxisLabelColor="#000000" categoryAxisTickLabelColor="#000000" categoryAxisLineColor="#000000" valueAxisLabelColor="#000000" valueAxisTickLabelColor="#000000" valueAxisLineColor="#000000">
+				<itemLabel/>
+				<seriesColor order="0" color="#C90000"/>
+				<seriesColor order="1" color="#FFD700"/>
+			</plot>
+		</element>
+		<element kind="staticText" uuid="0787946f-cf54-4d92-a34f-d3af20685a3c" x="6" y="560" width="542" height="30">
 			<text><![CDATA[09 - Ariège | 11 - Aude | 12 - Aveyron | 30 - Gard | 31 - Haute-Garonne | 32 - Gers | 34 - Hérault | 46 - Lot | 48 - Lozère | 65 -  Hautes-Pyrénées | 66 - Pyrénées-Orientales | 81 - Tarn | 82 - Tarn-et-Garonne]]></text>
-		</element>
-		<element kind="staticText" uuid="f454a234-91d5-4a08-821a-51666f14b399" x="2" y="430" width="520" height="61">
-			<text><![CDATA[Le graphique illustre la répartition de la population par département en région Occitanie. Il met en évidence que la Haute-Garonne (31) et l'Hérault (34) regroupent la majorité des habitants, tandis que des départements comme le Lot (46) et la Lozère (48) affichent une population nettement plus faible, reflétant une densité démographique variée au sein de la région.]]></text>
 		</element>
 	</summary>
 </jasperReport>
