@@ -4,7 +4,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
 	<dataset name="PieChart_Biens" uuid="13c2859a-c904-4b7d-81de-9164916da944">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BDD_Immo"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_Occitanie_DB"/>
 		<query language="SQL"><![CDATA[SELECT
     INSEE_DEP,
     SUM(loyer_apparts) AS total_loyer_apparts,
