@@ -161,6 +161,7 @@ ORDER BY
 	</title>
 	<summary height="613" splitType="Stretch">
 		<element kind="chart" chartType="pie" uuid="91c5417e-c4f7-45d1-800f-b61dd5d83434" x="-3" y="10" width="560" height="230" showLegend="false" evaluationTime="Report">
+			<titleFont fontSize="14.0" bold="true"/>
 			<titleExpression><![CDATA["Répartition de la Population par Département en Occitanie"]]></titleExpression>
 			<dataset kind="pie">
 				<datasetRun uuid="4b89d6a6-965a-47c7-beb8-3956ba501d7f" subDataset="Démographie"/>
@@ -178,6 +179,7 @@ ORDER BY
 			<text><![CDATA[Les graphiques illustrent la répartition de la population et le taux de chômage par département en région Occitanie. La Haute-Garonne (31) et l'Hérault (34) regroupent la majorité des habitants, tandis que des départements comme le Lot (46) et la Lozère (48) ont une population nettement plus faible. Concernant le chômage, les Pyrénées-Orientales (66) et l'Hérault (34) affichent les taux les plus élevés, tandis que le Gers (32) et la Lozère (48) se distinguent par des taux plus faibles, révélant des disparités démographiques et économiques marquées.]]></text>
 		</element>
 		<element kind="chart" chartType="bar" uuid="e5ffef08-1336-4104-917d-b969b0f768b6" x="7" y="270" width="540" height="180" evaluationTime="Report" theme="default">
+			<titleFont fontSize="14.0" bold="true"/>
 			<titleExpression><![CDATA["Taux de Chômage par Département en Occitanie"]]></titleExpression>
 			<dataset kind="category">
 				<datasetRun uuid="90bd55f2-c694-4f5a-ad98-8c2cf4c4b5a9" subDataset="Taux de chomage par département">
