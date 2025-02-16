@@ -60,17 +60,20 @@ OPTIMIZED-RENTAL-YIELD-VISUALIZATION-FOR-OCCITANIE-REGION
 │       └── donnees_communes.csv               // Communes raw data
 │
 ├── scripts
-│   ├── merge_dvf_loyers_rendement.py // Script to merge DVF and rental data
+│   ├── Process_And_Insert_Data.py   // Script to merge DVF and rental data insert data
 │   ├── insert_data.py               // Script to insert processed data into the database
-│   └── utils.py                     // Additional helper functions
+│   └── requirements.txt             // List of required Python dependencies for the project
 │
 ├── jasper_project
 │   └── MyReports
 │       └── reports
-│           ├── report_demographics.jrxml // Jasper report for demographics
-│           ├── report_chomage.jrxml      // Jasper report for unemployment
-│           └── report_rendements.jrxml   // Jasper report for rental yields
-│
+│           ├── Chart_Moy_Dep.jrxml         // Jasper report for average rental yields by department
+│           ├── Evo_prix_moyen_m².jrxml     // Jasper report for the evolution of average price per square meter
+│           ├── histo_prix_moy_mcarre.jrxml // Jasper report for histogram of average price per square meter
+│           ├── nuage_de_points.jrxml       // Jasper report for scatter plot of yields vs prices
+│           ├── Report_Démographie.jrxml    // Jasper report for demographic analysis
+│           ├── Report_Occitanie.jrxml      // Jasper report for an overview of the Occitanie region
+│           └── Types_Bien.jrxml            // Jasper report for property types by department
 ├── docs
 │   ├── database
 │   │   ├── sql-scripts
